@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
         cAPA102_Refresh();
         
         for ( i = 0; i < 72; i++)
-            cAPA102_Set_Pixel_4byte(i, 0);
+            cAPA102_Set_Pixel_4byte(i, 65535);
         cAPA102_Refresh();
        
         y++;
