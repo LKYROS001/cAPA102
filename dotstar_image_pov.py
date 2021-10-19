@@ -86,8 +86,27 @@ for x in range(360):  # For each column of image
         FINAL[x][y][3] = 0.5  # Brightness
 print(FINAL[0])
 
+with open('readme.txt', 'w') as f:
+    f.truncate()
+    for n in range(360):
+        for m in range(72):
+            f.write(str(FINAL[n][m]))
+            f.write(',')
 #while True:  # Loop forever
 
 #    for x in range(360):  # For each column of image...
 #        DOTS[0 : DOTS.n] = Final[x]  # Copy column to DotStar buffer
 #        DOTS.show()  # Send data to strip
+def getRGBfromI(RGBint):
+    blue =  RGBint & 255
+    green = (RGBint >> 8) & 255
+    red =   (RGBint >> 16) & 255
+    return red, green, blue
+
+def getIfromRGB(rgb):
+    red = rgb[0]
+    green = rgb[1]
+    blue = rgb[2]
+    print red, green, blue
+    RGBint = (red<<16) + (green<<8) + blue
+    return RGBint
