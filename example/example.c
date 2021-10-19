@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
             bri++;
         if (dir)
             bri--;
-        if (bri == 31)
+        if (bri == 10)
             dir = 1;
         if (bri == 0)
             dir = 0;
