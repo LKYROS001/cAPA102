@@ -3,8 +3,8 @@
 #include<unistd.h>
 
 int main(int argc, char *argv[]) {
-    int bri = 0;
-    int dir = 0;
+   // int bri = 0;
+   // int dir = 0;
     int time = 0;
     cAPA102_Init(72, 0, 0, 5);
     int i;
