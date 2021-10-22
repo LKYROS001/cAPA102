@@ -9,23 +9,23 @@ int main(int argc, char *argv[]) {
     cAPA102_Init(72, 0, 0, 5);
     int i;
     int y;
-    while( time < 1000000 ){
-        if (y == 360){
-            printf("YESSS \n");
-            y=0;
-        }
-        usleep(694);
+    while( time > -1 ){
+       // if (y == 360){
+       //     printf("YESSS \n");
+       //     y=0;
+       // }
+        usleep(125000);
         for ( i = 0; i < 72; i++)
             cAPA102_Set_Pixel_4byte(i, 16711680);
         //cAPA102_Set_Pixel_RGB(i, 255, 0, 0);
         cAPA102_Refresh();
-        usleep(694); 
+        usleep(125000); 
         for ( i = 0; i < 72; i++)
             cAPA102_Set_Pixel_4byte(i, 65535);
         cAPA102_Refresh();
        
-        y++;
-        time++;
+       // y++;
+        //time++;
     }
 
     cAPA102_Clear_All();
