@@ -44,13 +44,13 @@ int main(int argc, char *argv[]) {
         right = track2 * 36 ;
         
         for ( i = 0; i < 36; i++){
-            cAPA102_Set_Pixel_4byte(i, numberArray[left]);
+            cAPA102_Set_Pixel_4byte(i, numberArray[right]);
             left--;
         }
         //cAPA102_Set_Pixel_RGB(i, 255, 0, 0);
         
         for ( i = 36; i < 72; i++){
-            cAPA102_Set_Pixel_4byte(i, numberArray[right]);
+            cAPA102_Set_Pixel_4byte(i, numberArray[left]);
             right++;
         }
         cAPA102_Refresh();
