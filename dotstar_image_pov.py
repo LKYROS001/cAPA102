@@ -72,24 +72,25 @@ print("Displaying...")
 
 FINAL = [0 for x in range(360)]
 for x in range(360):
-    FINAL[x] = [[0, 0, 0, 0] for _ in range(72)]
-ratio = 128/72
+    FINAL[x] = [0 for _ in range(36)]
+ratio = 128/36
 distance = 0.0
 for x in range(360):  # For each column of image
-    for y in range(72):  # For each pixel in column
+    for y in range(36):  # For each pixel in column
         distance = ratio * y
         fx = round((distance * math.cos(math.radians(x))) + 128)
         fy = round((-1 * distance * math.sin(math.radians(y))) + 128)
-        FINAL[x][y][0] = COLUMN[fx][fy][0]  # Gamma-corrected R
-        FINAL[x][y][1] = COLUMN[fx][fy][1]  # Gamma-corrected G
-        FINAL[x][y][2] = COLUMN[fx][fy][2]  # Gamma-corrected B
-        FINAL[x][y][3] = 0.5  # Brightness
+        r = COLUMN[fx][fy][0] << 16 # Gamma-corrected R
+        g = COLUMN[fx][fy][1] << 8 # Gamma-corrected G
+        b = COLUMN[fx][fy][2]  # Gamma-corrected B
+        FINAL[x][y] = r+g+b
+        #FINAL[x][y][3] = 0.5  # Brightness
 print(FINAL[0])
 
 with open('readme.txt', 'w') as f:
     f.truncate()
     for n in range(360):
-        for m in range(72):
+        for m in range(36):
             f.write(str(FINAL[n][m]))
             f.write(',')
 #while True:  # Loop forever
