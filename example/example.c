@@ -22,7 +22,14 @@ int main(int argc, char *argv[]) {
         for ( i = 36; i < 72; i++)
             cAPA102_Set_Pixel_4byte(i, 65535);
         cAPA102_Refresh();
-       
+        usleep(125000);
+        for ( i = 0; i < 36; i++)
+            cAPA102_Set_Pixel_4byte(i, 65535);
+        //cAPA102_Set_Pixel_RGB(i, 255, 0, 0);
+        
+        for ( i = 36; i < 72; i++)
+            cAPA102_Set_Pixel_4byte(i, 16711680);
+        cAPA102_Refresh();
        // y++;
         //time++;
     }
