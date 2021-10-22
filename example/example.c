@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     int time = 0;
     cAPA102_Init(72, 0, 0, 5);
     int i;
-    int y;
+    //int y;
     while( time > -1 ){
        // if (y == 360){
        //     printf("YESSS \n");
