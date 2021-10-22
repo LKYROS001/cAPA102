@@ -13,7 +13,7 @@ $(example): example/example.c $(SOURCES)
 	$(CC) $^ -o $@ $(CFLAGS)
 
 
-$(pov): pov/pov.c $(SOURCES)
+$(pov): example/pov.c $(SOURCES)
 	$(CC) $^ -o $@ $(CFLAGS)
 clean:
 	rm $(example) $(pov)
