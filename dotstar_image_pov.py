@@ -73,7 +73,7 @@ print("Displaying...")
 
 FINAL = [0 for x in range(180)]
 for x in range(180):
-    FINAL[x] = [0 for _ in range(72)]
+    FINAL[x] = [[0,0] for _ in range(72)]
 ratio = 128/36
 distance = 0.0
 for x in range(180):  # For each column of image
@@ -86,16 +86,20 @@ for x in range(180):  # For each column of image
         r = COLUMN[fx][fy][0] << 16 # Gamma-corrected R
         g = COLUMN[fx][fy][1] << 8 # Gamma-corrected G
         b = COLUMN[fx][fy][2]  # Gamma-corrected B
-        FINAL[x][y] = r+g+b
-        #FINAL[x][y][3] = 0.5  # Brightness
+        FINAL[x][y][0] = fx
+        FINAL[x][y][1] = fy
+        #FINAL[x][y] = r+g+b
+        
 print(FINAL[0])
 
 with open('readme.txt', 'w') as f:
     f.truncate()
     for n in range(180):
+        f.write("line")
         for m in range(72):
             f.write(str(FINAL[n][m]))
             f.write(',')
+        f.write("\n")
 #while True:  # Loop forever
 
 #    for x in range(360):  # For each column of image...
