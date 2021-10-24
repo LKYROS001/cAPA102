@@ -7,9 +7,9 @@ SOURCES = src/cAPA102.c
 
 example = cAPA102_example
 pov = final
+test = tester
 
-
-all: $(example) $(pov) 
+all: $(example) $(pov) $(test)
 
 $(example): example/example.c $(SOURCES)
 	$(CC) $^ -o $@ $(CFLAGS)
@@ -17,6 +17,8 @@ $(example): example/example.c $(SOURCES)
 
 $(pov): example/pov.c $(SOURCES)
 	$(CC) $^ -o $@ $(CFLAGS)
-
+	
+$(test): example/test.c $(SOURCES)
+	$(CC) $^ -o $@ $(CFLAGS)
 clean:
-	rm $(example) $(pov) 
+	rm $(example) $(pov) $(test)
