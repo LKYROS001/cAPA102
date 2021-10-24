@@ -70,15 +70,15 @@ for x in range(WIDTH):  # For each column of image
 
 print("Displaying...")
 
-FINAL = [0 for x in range(360)]
-for x in range(360):
-    FINAL[x] = [0 for _ in range(36)]
+FINAL = [0 for x in range(180)]
+for x in range(180):
+    FINAL[x] = [0 for _ in range(72)]
 ratio = 128/36
 distance = 0.0
 for x in range(360):  # For each column of image
-    for y in range(36):  # For each pixel in column
-        distance = ratio * y
-        fx = round((distance * math.cos(math.radians(x))) + 128)
+    for y in range(72):  # For each pixel in column
+        distance = ratio * (y-36)
+        fx = round((distance * math.cos(math.radians(x)))+128)
         fy = round((-1 * distance * math.sin(math.radians(y))) + 128)
         r = COLUMN[fx][fy][0] << 16 # Gamma-corrected R
         g = COLUMN[fx][fy][1] << 8 # Gamma-corrected G
@@ -89,8 +89,8 @@ print(FINAL[0])
 
 with open('readme.txt', 'w') as f:
     f.truncate()
-    for n in range(360):
-        for m in range(36):
+    for n in range(180):
+        for m in range(72):
             f.write(str(FINAL[n][m]))
             f.write(',')
 #while True:  # Loop forever
