@@ -79,27 +79,26 @@ distance = 0.0
 for x in range(180):  # For each column of image
     for y in range(72):  # For each pixel in column
         distance = ratio * (y-36)
-        fx = round((distance * math.cos(math.radians(x)))+127)
-        fy = round((-1 * distance * math.sin(math.radians(y))) + 127)
+        fx = round((distance * math.cos(math.radians(x)))+128)
+        fy = round((-1 * distance * math.sin(math.radians(x))) + 128)
         #print("x point is", x, " and y point is ", y)
         #print("x is", fx, " and y is ", fy)
         r = COLUMN[fx][fy][0] << 16 # Gamma-corrected R
         g = COLUMN[fx][fy][1] << 8 # Gamma-corrected G
         b = COLUMN[fx][fy][2]  # Gamma-corrected B
-        FINAL[x][y][0] = fx
-        FINAL[x][y][1] = fy
-        #FINAL[x][y] = r+g+b
+        #FINAL[x][y][0] = fx
+        #FINAL[x][y][1] = fy
+        FINAL[x][y] = r+g+b
         
 print(FINAL[0])
 
 with open('readme.txt', 'w') as f:
     f.truncate()
     for n in range(180):
-        f.write("line")
         for m in range(72):
             f.write(str(FINAL[n][m]))
             f.write(',')
-        f.write("\n")
+
 #while True:  # Loop forever
 
 #    for x in range(360):  # For each column of image...
