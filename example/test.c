@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
         if (x > 12959){
             x = 0;
         }
-        for ( i = 0; i < 36; i++){
+        for ( i = 0; i < 72; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
             x++;
         }
