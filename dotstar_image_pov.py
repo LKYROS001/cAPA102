@@ -81,6 +81,7 @@ for x in range(360):  # For each column of image
         distance = ratio * (y-36)
         fx = round((distance * math.cos(math.radians(x)))+128)
         fy = round((-1 * distance * math.sin(math.radians(y))) + 128)
+        print("x point is", x, " and y point is ", y)
         print("x is", fx, " and y is ", fy)
         r = COLUMN[fx][fy][0] << 16 # Gamma-corrected R
         g = COLUMN[fx][fy][1] << 8 # Gamma-corrected G
