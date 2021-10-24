@@ -63,6 +63,7 @@ print("Converting...")
 for x in range(WIDTH):  # For each column of image
     for y in range(HEIGHT):  # For each pixel in column
         value = PIXELS[x, y]  # Read RGB pixel in image
+        
         COLUMN[x][y][0] = GAMMA[value[0]]  # Gamma-corrected R
         COLUMN[x][y][1] = GAMMA[value[1]]  # Gamma-corrected G
         COLUMN[x][y][2] = GAMMA[value[2]]  # Gamma-corrected B
@@ -80,6 +81,7 @@ for x in range(360):  # For each column of image
         distance = ratio * (y-36)
         fx = round((distance * math.cos(math.radians(x)))+128)
         fy = round((-1 * distance * math.sin(math.radians(y))) + 128)
+        print("x is", fx, " and y is ", fy)
         r = COLUMN[fx][fy][0] << 16 # Gamma-corrected R
         g = COLUMN[fx][fy][1] << 8 # Gamma-corrected G
         b = COLUMN[fx][fy][2]  # Gamma-corrected B
