@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     myFile = fopen("readme.txt", "r");
 
     //read file into array
-    int numberArray[12960];
+    int numberArray[25920];
     //int i;
 
     if (myFile == NULL){
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
         exit (0);
     }
 
-    for (y = 0; y < 12960; y++){
+    for (y = 0; y < 25920; y++){
         fscanf(myFile, "%d,", &numberArray[y] );
     }
     fclose(myFile);
@@ -31,17 +31,14 @@ int main(int argc, char *argv[]) {
     int x = 0;
     int i;
     while( time > -1 ){
-        if (x > 12959){
+        if (x > 25920){
             x = 0;
         }
-        for ( i = 0; i < 32; i++){
+        for ( i = 0; i < 72; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
             x++;
         }
-        for ( i = 32; i < 72; i++){
-            cAPA102_Set_Pixel_4byte(i, 0);
-            x++;
-        }
+
         cAPA102_Refresh();
        // y++;
         //time++;
