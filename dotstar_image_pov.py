@@ -20,7 +20,7 @@ from PIL import Image
 #import adafruit_dotstar as dotstar
 
 NUMPIXELS = 30  # Length of DotStar strip
-FILENAME = "soul.png"  # Image file to load
+FILENAME = "sai.png"  # Image file to load
 #ORDER = dotstar.BGR  # Change to GBR for older DotStar strips
 
 # First two arguments in strip declaration identify the clock and data pins
@@ -71,12 +71,12 @@ for x in range(WIDTH):  # For each column of image
 
 print("Displaying...")
 
-FINAL = [0 for x in range(360)]
-for x in range(360):
+FINAL = [0 for x in range(180)]
+for x in range(180):
     FINAL[x] = [[0,0] for _ in range(72)]
 ratio = 128/36
 distance = 0.0
-for x in range(360):  # For each column of image
+for x in range(180):  # For each column of image
     for y in range(72):  # For each pixel in column
         distance = ratio * (y-36)
         fx = round((distance * math.cos(math.radians(x)))+127)
@@ -94,7 +94,7 @@ print(FINAL[0])
 
 with open('readme.txt', 'w') as f:
     f.truncate()
-    for n in range(360):
+    for n in range(180):
         for m in range(72):
             f.write(str(FINAL[n][m]))
             f.write(',')
