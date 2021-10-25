@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
         cAPA102_Refresh();
        // y++;
         //time++;
-        //usleep(10000);
+        usleep(500);
     }
 
     cAPA102_Clear_All();
