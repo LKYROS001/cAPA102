@@ -34,14 +34,18 @@ int main(int argc, char *argv[]) {
         if (x > 12959){
             x = 0;
         }
-        for ( i = 0; i < 72; i++){
+        for ( i = 0; i < 32; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
+            x++;
+        }
+        for ( i = 32; i < 72; i++){
+            cAPA102_Set_Pixel_4byte(i, 0);
             x++;
         }
         cAPA102_Refresh();
        // y++;
         //time++;
-        usleep(0.0001);
+        usleep(0.01);
     }
 
     cAPA102_Clear_All();
