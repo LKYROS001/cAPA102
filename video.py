@@ -42,8 +42,8 @@ video.release()
 cv2.destroyAllWindows()
 with open('vid.txt', 'w') as f:
   f.truncate()
-    f.write(str(currentframe*360*72))
-    f.write(',')
+  f.write(str(currentframe*360*72))
+  f.write(',')
 
 for v in range(currentframe):
   
