@@ -22,28 +22,28 @@ import os
 
 video = cv2.VideoCapture('rotate.mp4') 
 try:  
-	if not os.path.exists('frames'): 
-		os.makedirs('frames') 
+  if not os.path.exists('frames'): 
+    os.makedirs('frames') 
 except OSError: 
-	print ('Error') 
+  print ('Error') 
 currentframe = 0
 while(True): 
-	ret,frame = video.read() 
+  ret,frame = video.read() 
 
-	if ret: 
-		name = './frames/frame' + str(currentframe) + '.png'
-		print ('Captured...' + name) 
-		cv2.imwrite(name, frame) 
-		currentframe += 1
-	else: 
-		break
+  if ret: 
+    name = './frames/frame' + str(currentframe) + '.png'
+    print ('Captured...' + name) 
+    cv2.imwrite(name, frame) 
+    currentframe += 1
+  else: 
+    break
     
 video.release() 
 cv2.destroyAllWindows()
 with open('vid.txt', 'w') as f:
   f.truncate()
-	f.write(str(currentframe*360*72))
-	f.write(',')
+    f.write(str(currentframe*360*72))
+    f.write(',')
 
 for v in range(currentframe):
   
