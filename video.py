@@ -68,7 +68,7 @@ for v in range(currentframe):
   GAMMA = bytearray(HEIGHT)
   brightness = 0.25
   for i in range(HEIGHT):
-    GAMMA[i] = int(pow(float(i) / 255.0, 2.7) * brightness * 255.0 + 0.5)
+     GAMMA[i] = int(pow(float(i) / 255.0, 2.7) * brightness * 255.0 + 0.5)
 
   # Allocate list of lists, one for each column of image.
   print("Allocating...")
