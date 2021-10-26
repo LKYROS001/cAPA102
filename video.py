@@ -37,6 +37,7 @@ while(True):
 		currentframe += 1
 	else: 
 		break
+    
 video.release() 
 cv2.destroyAllWindows()
 with open('vid.txt', 'w') as f:
