@@ -43,7 +43,7 @@ with open('vid.txt', 'w') as f:
   f.truncate()
 	f.write(str(currentframe*360*72))
 	f.write(',')
-	
+
 for v in range(currentframe):
   
   FILENAME = "frame" + str(l)+".png"  # Image file to load
