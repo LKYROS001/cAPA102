@@ -8,8 +8,9 @@ SOURCES = src/cAPA102.c
 example = cAPA102_example
 pov = final
 test = tester
+vid = video
 
-all: $(example) $(pov) $(test)
+all: $(example) $(pov) $(test) $(vid)
 
 $(example): example/example.c $(SOURCES)
 	$(CC) $^ -o $@ $(CFLAGS)
@@ -20,5 +21,9 @@ $(pov): example/pov.c $(SOURCES)
 	
 $(test): example/test.c $(SOURCES)
 	$(CC) $^ -o $@ $(CFLAGS)
+	
+$(vid): example/vid.c $(SOURCES)
+	$(CC) $^ -o $@ $(CFLAGS)
+	
 clean:
-	rm $(example) $(pov) $(test)
+	rm $(example) $(pov) $(test) $(vid)
