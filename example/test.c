@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
     while( time > -1 ){
         if (x > 25840){
             x = 0;
-            printf("done\n");
+            //printf("done\n");
         }
         for ( i = 0; i < 72; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
@@ -43,8 +43,8 @@ int main(int argc, char *argv[]) {
         cAPA102_Refresh();
        // y++;
         //time++;
-        usleep(10000);
-        //usleep(0.01);
+        //usleep(10000);
+        usleep(0.01);
     }
 
     cAPA102_Clear_All();
