@@ -73,13 +73,13 @@ for v in range(1,currentframe):
 
   print("Displaying...")
 
-  FINAL = [0 for x in range(360)]
-  for x in range(360):
+  FINAL = [0 for x in range(361)]
+  for x in range(361):
     FINAL[x] = [[0,0] for _ in range(72)]
   ratio = (HEIGHT/2)/36
   distance = 0.0
   offset2=(HEIGHT/2)-1
-  for x in range(360):  # For each column of image
+  for x in range(361):  # For each column of image
     for y in range(72):  # For each pixel in column
       distance = ratio * (y-36)
       fx = round((distance * math.cos(math.radians(x)))+offset2)
@@ -96,7 +96,7 @@ for v in range(1,currentframe):
   print(FINAL[0])
 
   with open('vid.txt', 'a') as f:
-    for n in range(360):
+    for n in range(361):
       for m in range(72):
         f.write(str(FINAL[n][m]))
         f.write(',')
