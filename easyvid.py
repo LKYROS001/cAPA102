@@ -50,9 +50,9 @@ for v in range(1,currentframe):
     
 
   # Calculate gamma correction table, makes mid-range colors look 'right':
-  GAMMA = bytearray(HEIGHT)
+  GAMMA = bytearray(256)
   brightness = 0.25
-  for i in range(HEIGHT):
+  for i in range(256):
      GAMMA[i] = int(pow(float(i) / 255.0, 2.7) * brightness * 255.0 + 0.5)
 
   # Allocate list of lists, one for each column of image.
