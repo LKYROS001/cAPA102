@@ -95,7 +95,7 @@ for v in range(1,currentframe):
 
   print(FINAL[0])
 
-  with open('readme.txt', 'w') as f:
+  with open('readme.txt', 'a') as f:
     for n in range(360):
       for m in range(72):
         f.write(str(FINAL[n][m]))
