@@ -21,7 +21,7 @@ import sys, os
 
 #script_dir = sys.path[0]
 currentframe = 42
-with open('vid.txt', 'w') as f:
+with open('vid.txt', 'a') as f:
   f.truncate()
   f.write(str(currentframe*360*72))
   f.write(',')
