@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
     int x = 0;
     int i;
     while( time > -1 ){
-        if (x > 25919){
+        if (x > 25847){
             x = 0;
         }
         for ( i = 0; i < 72; i++){
