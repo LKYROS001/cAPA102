@@ -20,12 +20,12 @@ from PIL import Image
 import sys, os
 
 #script_dir = sys.path[0]
-
+currentframe = 42
 with open('vid.txt', 'w') as f:
   f.truncate()
   f.write(str(currentframe*360*72))
   f.write(',')
-currentframe = 42
+
 for v in range(1,currentframe):
   if (v<10):
     FILENAME = "frames/ezgif-frame-00" + str(v)+".jpg"  # Image file to load
