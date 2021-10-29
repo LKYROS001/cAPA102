@@ -58,7 +58,7 @@ for v in range(1,currentframe):
   # Allocate list of lists, one for each column of image.
   print("Allocating...")
   COLUMN = [0 for x in range(HEIGHT)]
-  for x in range(WIDTH):
+  for x in range(HEIGHT):
     COLUMN[x] = [[0, 0, 0, 0] for _ in range(HEIGHT)]
   
   # Convert entire RGB image into columnxrow 2D list.
