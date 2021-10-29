@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     int x = 0;
     int i;
     while( time > -1 ){
-        if (x > (size-1)){
+        if (x > (size-80)){
             x = 0;
         }
         for ( i = 0; i < 72; i++){
