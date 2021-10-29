@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     int y;
    
     FILE *myFile;
-    myFile = fopen("readme.txt", "r");
+    myFile = fopen("vid.txt", "r");
 
     //read file into array
     
