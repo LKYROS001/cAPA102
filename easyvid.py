@@ -76,7 +76,7 @@ for v in range(1,currentframe):
   FINAL = [0 for x in range(360)]
   for x in range(360):
     FINAL[x] = [[0,0] for _ in range(72)]
-  ratio = HEIGHT/36
+  ratio = (HEIGHT/2)/36
   distance = 0.0
   offset2=(HEIGHT/2)-1
   for x in range(360):  # For each column of image
