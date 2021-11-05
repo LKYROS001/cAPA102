@@ -33,7 +33,6 @@ int main(int argc, char *argv[]) {
     while( 1 ){
         if (x > 25840){
             x = 0;
-            printf("done\n");
         }
         for ( i = 0; i < 72; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
