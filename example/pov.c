@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 
     int x = 0;
     int i;
-    while( time > -1 ){
+    while( 1 ){
         if (x > 25840){
             x = 0;
             printf("done\n");
