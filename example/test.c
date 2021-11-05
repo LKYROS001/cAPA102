@@ -30,21 +30,23 @@ int main(int argc, char *argv[]) {
 
     int x = 0;
     int i;
-    while( time > -1 ){
+    int diff = 0;
+    while( true ){
         if (x > 25840){
             x = 0;
-            printf("done\n");
         }
+        time = (int)(time());
         for ( i = 0; i < 72; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
             x++;
         }
-
+        diff = (int)(time()) - time;
+        printf("Timestamp: %d\n",diff);
         cAPA102_Refresh();
        // y++;
         //time++;
         //usleep(10000);
-        usleep(0.01);
+        //usleep(0.01);
     }
 
     cAPA102_Clear_All();
