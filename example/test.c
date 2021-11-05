@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     int x = 0;
     int i;
     int diff = 0;
-    while( true ){
+    while( TRUE ){
         if (x > 25840){
             x = 0;
         }
