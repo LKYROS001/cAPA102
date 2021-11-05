@@ -36,12 +36,12 @@ int main(int argc, char *argv[]) {
         if (x > 25840){
             x = 0;
         }
-        times = (int)(time(NULL));
+        times = (int)(clock(NULL));
         for ( i = 0; i < 72; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
             x++;
         }
-        diff = (int)(time(NULL)) - times;
+        diff = (int)(clock(NULL)) - times;
         printf("Timestamp: %d\n",diff);
         cAPA102_Refresh();
        // y++;
