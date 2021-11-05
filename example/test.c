@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
             x++;
         }
         diff = clock();
-        printf("Timestamp: %f\n",difftime(diff, times))/CLOCKS_PER_SEC;
+        printf("Timestamp: %f\n",difftime(diff, times)/CLOCKS_PER_SEC);
         cAPA102_Refresh();
        // y++;
         //time++;
