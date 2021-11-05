@@ -7,7 +7,7 @@
 int main(int argc, char *argv[]) {
    // int bri = 0;
    // int dir = 0;
-    int times = 0;
+    time_t times = 0;
     cAPA102_Init(72, 0, 0, 25);
     
     int y;
@@ -31,18 +31,18 @@ int main(int argc, char *argv[]) {
 
     int x = 0;
     int i;
-    int diff = 0;
+    time_t diff = 0;
     while( 1 ){
         if (x > 25840){
             x = 0;
         }
-        times = (int)(clock(NULL));
+        times = clock(NULL);
         for ( i = 0; i < 72; i++){
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
             x++;
         }
-        diff = (int)(clock(NULL)) - times;
-        printf("Timestamp: %d\n",diff);
+        diff = clock(NULL);
+        printf("Timestamp: %f\n",difftime(diff, times));
         cAPA102_Refresh();
        // y++;
         //time++;
