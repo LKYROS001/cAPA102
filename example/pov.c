@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
        // y++;
         //time++;
         //usleep(10000);
-        usleep(100);
+        usleep(1);
     }
 
     cAPA102_Clear_All();
