@@ -4,19 +4,15 @@
 #include<unistd.h>
 
 int main(int argc, char *argv[]) {
-   // int bri = 0;
-   // int dir = 0;
-    //int time = 0;
-    cAPA102_Init(72, 0, 0, 25);
+    cAPA102_Init(72, 0, 0, 25); //set number of LEDs and brightness
     
     int y;
    
     FILE *myFile;
-    myFile = fopen("readme.txt", "r");
+    myFile = fopen("readme.txt", "r");//open file
 
     //read file into array
     int numberArray[25920];
-    //int i;
 
     if (myFile == NULL){
         printf("Error Reading File\n");
@@ -30,20 +26,17 @@ int main(int argc, char *argv[]) {
 
     int x = 0;
     int i;
-    while( 1 ){
-        if (x > 25840){
+    while( 1 ){ //loop through array
+        if (x > 25919){//If array end has been reached, reset
             x = 0;
         }
-        for ( i = 0; i < 72; i++){
+        for ( i = 0; i < 72; i++){//assign each LED a colour
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
             x++;
         }
 
-        cAPA102_Refresh();
-       // y++;
-        //time++;
-        //usleep(10000);
-        usleep(1);
+        cAPA102_Refresh();//populate LEDs with assigned colour
+        usleep(1);// Timing delay
     }
 
     cAPA102_Clear_All();
