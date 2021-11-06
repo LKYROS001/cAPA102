@@ -3,17 +3,17 @@
 #include <stdlib.h>
 #include<unistd.h>
 #include <time.h>
+//By Ross Lakey
+//Program used to test LED image assignment and timing
 
 int main(int argc, char *argv[]) {
-   // int bri = 0;
-   // int dir = 0;
-    time_t times = 0;
-    cAPA102_Init(72, 0, 0, 15);
+
+    cAPA102_Init(72, 0, 0, 15); //set number of LEDs and brightness
     
     int y;
    
     FILE *myFile;
-    myFile = fopen("readme.txt", "r");
+    myFile = fopen("readme.txt", "r");//open file
 
     //read file into array
     int numberArray[25920];
@@ -29,25 +29,25 @@ int main(int argc, char *argv[]) {
     }
     fclose(myFile);
 
-    int x = 0;
-    int i;
-    time_t diff = 0;
-    while( 1 ){
-        if (x > 25840){
+    int x = 0; //array counter
+    int i; //pixel counter
+   
+    time_t times = 0; //initial time 
+    time_t diff = 0;//fnishing time
+    
+    while( 1 ){//loop through array
+        if (x > 25840){//If array end has been reached, reset
             x = 0;
         }
-        times = clock();
-        for ( i = 0; i < 72; i++){
+        times = clock(); //get initial time
+        for ( i = 0; i < 72; i++){  //assign each LED a colour
             cAPA102_Set_Pixel_4byte(i, numberArray[x]);
             x++;
         }
-        diff = clock();
-        printf("Timestamp: %f\n",difftime(diff, times)/CLOCKS_PER_SEC);
-        cAPA102_Refresh();
-       // y++;
-        //time++;
-        //usleep(10000);
-        //usleep(0.01);
+        cAPA102_Refresh(); //populate LEDs with assigned colour
+        diff = clock(); //get finishing time
+        printf("Timestamp: %f\n",difftime(diff, times)/CLOCKS_PER_SEC); //print time taken to display row of LEDs
+       //No timing delay as max speed of LED changes are being tested
     }
 
     cAPA102_Clear_All();
