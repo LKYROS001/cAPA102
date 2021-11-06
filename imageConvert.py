@@ -58,8 +58,6 @@ for x in range(361):  # 360 degrees
         g = COLUMN[fx][fy][1] << 8 # G value converted to bit shifted hex value
         b = COLUMN[fx][fy][2]  # B value converted to hex value
         FINAL[x][y] = r+g+b #combined hex value
-        
-print(FINAL[0])
 
 with open('readme.txt', 'w') as f: #write to textfile
     f.truncate() # delete previously stored image
