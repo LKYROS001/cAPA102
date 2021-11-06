@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<unistd.h>
-
+//By Ross Lakey
+//Program used to display static image
 int main(int argc, char *argv[]) {
     cAPA102_Init(72, 0, 0, 25); //set number of LEDs and brightness
     
