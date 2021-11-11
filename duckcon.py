@@ -46,7 +46,7 @@ for v in range(1,currentframe): #loop through all image frames
   for x in range(HEIGHT):
     COLUMN[x] = [[0, 0, 0, 0] for _ in range(HEIGHT)]
   
-print("Converting to gamma colours")
+  print("Converting to gamma colours")
   for x in range(HEIGHT):  # For each column of image
     for y in range(HEIGHT):  # For each pixel in column
       value = PIXELS[x+offset, y]  # Read RGB pixel in image using Offset, offset is set to zero in the case of 1:1 image dimensions
@@ -55,7 +55,7 @@ print("Converting to gamma colours")
       COLUMN[x][y][2] = GAMMA[value[2]]  # Gamma-corrected B
       COLUMN[x][y][3] = 0.5  # Brightness
 
-print("Printing to textfile")
+  print("Printing to textfile")
 #create array for final rgb value outputs
   FINAL = [0 for x in range(361)]
   for x in range(361):
